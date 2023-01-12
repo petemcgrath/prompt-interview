@@ -34,8 +34,8 @@ const users = [
   {
     id: 3,
     name: "Employee #4",
-    activatedOn: new Date(2020, 11, 3, 0, 0, 0, 0), // 2020-01-01
-    deactivatedOn: new Date(2020, 11, 25, 0, 0, 0, 0), // 2020-12-20,
+    activatedOn: new Date(2020, 11, 3, 0, 0, 0, 0), // 2020-12-03
+    deactivatedOn: new Date(2020, 11, 25, 0, 0, 0, 0), // 2020-12-25,
     customerId: 1,
   },
 ];

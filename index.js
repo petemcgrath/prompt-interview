@@ -47,7 +47,6 @@
  *   ]
  */
 function monthlyCharge(month, subscription, users) {
-  console.log({ month, subscription, users });
   const monthDate = getMonthDateFromString(month);
   // if no subscription, return 0
   if (!subscription) {
@@ -57,7 +56,6 @@ function monthlyCharge(month, subscription, users) {
   if (!users.length) {
     return "$0.00";
   }
-  console.log("passed gates");
 
   // for all users, calculate total days within month where subscription was active
   // loop through each user
@@ -73,7 +71,7 @@ function monthlyCharge(month, subscription, users) {
     if (!user.activatedOn.getTime() >= lastOfMonth.getTime()) {
       continue;
     }
-    //   Is their deactivation before the first of the mont
+    //   Is their deactivation before the first of the month
     if (user.deactivatedOn) {
       if (user.deactivatedOn.getTime() < firstOfMonth.getTime()) {
         continue;
@@ -122,7 +120,7 @@ const calculateDaysActive = (user, firstOfMonth, lastOfMonth) => {
         : lastOfMonth;
   }
   // Add a day to the end to include last day of subscription in total
-  // End time is the greater value, subtract start tim
+  // End time is the greater value, subtract start time
   return end.getDate() - start.getDate() + 1;
 };
 export { calculateDaysActive };
